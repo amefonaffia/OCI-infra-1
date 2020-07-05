@@ -1,0 +1,1709 @@
+2020/07/05 23:13:11[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:11[TERRAFORM_CONSOLE] [INFO] Initializing provider plugins...
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] The following providers do not have any version constraints in configuration,
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] so the latest version was installed.
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] To prevent automatic upgrades to new major versions that may contain breaking
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] changes, it is recommended to add version = "..." constraints to the
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] corresponding provider blocks in configuration, with the constraint strings
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] suggested below.
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] * provider.oci: version = "~> 3.83"
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] * provider.random: version = "~> 2.1"
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] * provider.template: version = "~> 2.1"
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] Terraform has been successfully initialized!
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] You may now begin working with Terraform. Try running "terraform plan" to see
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] any changes that are required for your infrastructure. All Terraform commands
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] should now work.
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] If you ever set or change modules or backend configuration for Terraform,
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] rerun this command to reinitialize your working directory. If you forget, other
+2020/07/05 23:13:12[TERRAFORM_CONSOLE] [INFO] commands will detect it and remind you to do so if necessary.
+2020/07/05 23:13:16[TERRAFORM_CONSOLE] [INFO] Refreshing Terraform state in-memory prior to plan...
+2020/07/05 23:13:16[TERRAFORM_CONSOLE] [INFO] The refreshed state will be used to calculate this plan, but will not be
+2020/07/05 23:13:16[TERRAFORM_CONSOLE] [INFO] persisted to local or remote state storage.
+2020/07/05 23:13:16[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:17[TERRAFORM_CONSOLE] [INFO] data.template_file.mushop: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_limits_services.test_services: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_objectstorage_namespace.user_namespace: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_identity_availability_domains.ADs: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_limits_limit_values.test_limit_values[1]: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_limits_limit_values.test_limit_values[2]: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] data.oci_limits_limit_values.test_limit_values[0]: Refreshing state...
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:18[TERRAFORM_CONSOLE] [INFO] ------------------------------------------------------------------------
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] An execution plan has been generated and is shown below.
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] Resource actions are indicated with the following symbols:
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + create
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]  <= read (data resources)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] Terraform will perform the following actions:
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # data.oci_database_autonomous_database_wallet.autonomous_database_wallet will be read during apply
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # (config refers to values not yet known)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]  <= data "oci_database_autonomous_database_wallet" "autonomous_database_wallet"  {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + autonomous_database_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + base64_encode_content  = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + password               = (sensitive value)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_instance.app-instance[0] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_instance" "app-instance" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + availability_domain                 = "kRKn:EU-FRANKFURT-1-AD-2"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + boot_volume_id                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id                      = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dedicated_vm_host_id                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + fault_domain                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags                       = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + hostname_label                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + image                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipxe_script                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_pv_encryption_in_transit_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + launch_mode                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + metadata                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + private_ip                          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + public_ip                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + region                              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + shape                               = "VM.Standard.E2.1.Micro"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + subnet_id                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + system_tags                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_maintenance_reboot_due         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + agent_config {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_management_disabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_monitoring_disabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + create_vnic_details {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + assign_public_ip       = "true"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + defined_tags           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + display_name           = "primaryvnic"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + freeform_tags          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + hostname_label         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + private_ip             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + skip_source_dest_check = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + subnet_id              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + vlan_id                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + launch_options {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + boot_volume_type                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + firmware                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_consistent_volume_naming_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_pv_encryption_in_transit_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + network_type                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + remote_data_volume_type             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + shape_config {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + gpu_description               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + gpus                          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disk_description        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disks                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disks_total_size_in_gbs = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + max_vnic_attachments          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + memory_in_gbs                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + networking_bandwidth_in_gbps  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + ocpus                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + processor_description         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source_details {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + boot_volume_size_in_gbs = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + kms_key_id              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_id               = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa7gj6uot6tz6t34qjzvkldxtwse7gr5m7xvnh6xfm53ddxp3w37ja"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_type             = "image"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_instance.app-instance[1] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_instance" "app-instance" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + availability_domain                 = "kRKn:EU-FRANKFURT-1-AD-2"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + boot_volume_id                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id                      = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dedicated_vm_host_id                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + fault_domain                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags                       = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + hostname_label                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + image                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipxe_script                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_pv_encryption_in_transit_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + launch_mode                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + metadata                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + private_ip                          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + public_ip                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + region                              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + shape                               = "VM.Standard.E2.1.Micro"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + subnet_id                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + system_tags                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_maintenance_reboot_due         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + agent_config {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_management_disabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_monitoring_disabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + create_vnic_details {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + assign_public_ip       = "true"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + defined_tags           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + display_name           = "primaryvnic"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + freeform_tags          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + hostname_label         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + private_ip             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + skip_source_dest_check = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + subnet_id              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + vlan_id                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + launch_options {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + boot_volume_type                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + firmware                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_consistent_volume_naming_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_pv_encryption_in_transit_enabled = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + network_type                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + remote_data_volume_type             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + shape_config {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + gpu_description               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + gpus                          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disk_description        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disks                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + local_disks_total_size_in_gbs = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + max_vnic_attachments          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + memory_in_gbs                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + networking_bandwidth_in_gbps  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + ocpus                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + processor_description         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source_details {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + boot_volume_size_in_gbs = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + kms_key_id              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_id               = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa7gj6uot6tz6t34qjzvkldxtwse7gr5m7xvnh6xfm53ddxp3w37ja"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_type             = "image"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_internet_gateway.mushopIG will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_internet_gateway" "mushopIG" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + enabled        = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags  = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + vcn_id         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_route_table.mushopLBRT will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_route_table" "mushopLBRT" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags  = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + vcn_id         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + route_rules {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + cidr_block        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + description       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + destination       = "0.0.0.0/0"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + destination_type  = "CIDR_BLOCK"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + network_entity_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_security_list.mushopLBSecurityList will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_security_list" "mushopLBSecurityList" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags  = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + vcn_id         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + egress_security_rules {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + description      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + destination      = "0.0.0.0/0"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + destination_type = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + protocol         = "6"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + stateless        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ingress_security_rules {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + description = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + protocol    = "6"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source      = "0.0.0.0/0"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_type = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + stateless   = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + tcp_options {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + max = 22
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + min = 22
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]             }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ingress_security_rules {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + description = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + protocol    = "6"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source      = "0.0.0.0/0"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + source_type = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + stateless   = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + tcp_options {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + max = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + min = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]             }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_subnet.mushopLBSubnet will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_subnet" "mushopLBSubnet" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + availability_domain        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cidr_block                 = "10.1.21.0/24"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id             = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dhcp_options_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dns_label                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags              = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipv6cidr_block             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipv6public_cidr_block      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipv6virtual_router_ip      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + prohibit_public_ip_on_vnic = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + route_table_id             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + security_list_ids          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + subnet_domain_name         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + vcn_id                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + virtual_router_ip          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + virtual_router_mac         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_core_virtual_network.mushopVCN will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_core_virtual_network" "mushopVCN" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cidr_block               = "10.1.0.0/16"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id           = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + default_dhcp_options_id  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + default_route_table_id   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + default_security_list_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dns_label                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags            = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipv6cidr_block           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ipv6public_cidr_block    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_ipv6enabled           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + vcn_domain_name          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_database_autonomous_database.mushop_autonomous_database will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_database_autonomous_database" "mushop_autonomous_database" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + admin_password                                 = (sensitive value)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + autonomous_container_database_id               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + autonomous_database_backup_id                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + autonomous_database_id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + available_upgrade_versions                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + clone_type                                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id                                 = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + connection_strings                             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + connection_urls                                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cpu_core_count                                 = 1
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + data_safe_status                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + data_storage_size_in_tbs                       = 1
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + db_name                                        = "MuShopDB"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + db_version                                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + db_workload                                    = "OLTP"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags                                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name                                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags                                  = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                                             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + infrastructure_type                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_auto_scaling_enabled                        = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_dedicated                                   = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_free_tier                                   = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_preview                                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_preview_version_with_service_terms_accepted = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + license_model                                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + lifecycle_details                              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + nsg_ids                                        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + private_endpoint                               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + private_endpoint_ip                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + private_endpoint_label                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + service_console_url                            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source_id                                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                                          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + subnet_id                                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + system_tags                                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created                                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_deletion_of_free_autonomous_database      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_maintenance_begin                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_maintenance_end                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_reclamation_of_free_autonomous_database   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + timestamp                                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + used_data_storage_size_in_tbs                  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_identity_policy.mushop_allow_object_storage_lifecycle will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_identity_policy" "mushop_allow_object_storage_lifecycle" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ETag           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id = "ocid1.tenancy.oc1..aaaaaaaazekybos2m5lpkkwvvurattp3cztc4ecovj3lriaytnxk3j3vtraq"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + description    = "policy created by terraform for MuShop Basic"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags  = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + inactive_state = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + lastUpdateETag = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + policyHash     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + statements     = [
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Allow service objectstorage-eu-frankfurt-1 to manage object-family in tenancy",
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         ]
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_date   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_load_balancer_backend.mushop-be[0] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_load_balancer_backend" "mushop-be" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + backendset_name  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + backup           = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + drain            = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ip_address       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + load_balancer_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + offline          = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + port             = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + weight           = 1
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_load_balancer_backend.mushop-be[1] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_load_balancer_backend" "mushop-be" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + backendset_name  = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + backup           = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + drain            = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ip_address       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + load_balancer_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + offline          = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + port             = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + weight           = 1
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_load_balancer_backend_set.mushop-bes will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_load_balancer_backend_set" "mushop-bes" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + backend          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + load_balancer_id = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + policy           = "IP_HASH"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + health_checker {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + interval_ms         = 5000
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + port                = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + protocol            = "HTTP"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + response_body_regex = ".*"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + retries             = 10
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + return_code         = 200
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + timeout_in_millis   = 2000
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + url_path            = "/api/health"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + lb_cookie_session_persistence_configuration {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + cookie_name        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + disable_fallback   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + domain             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_http_only       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_secure          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + max_age_in_seconds = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + path               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + session_persistence_configuration {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + cookie_name      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + disable_fallback = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_load_balancer_listener.mushop_listener will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_load_balancer_listener" "mushop_listener" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + default_backend_set_name = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + hostname_names           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + load_balancer_id         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + path_route_set_name      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + port                     = 80
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + protocol                 = "HTTP"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + rule_set_names           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + connection_configuration {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + idle_timeout_in_seconds = "30"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_load_balancer_load_balancer.mushop_lb will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_load_balancer_load_balancer" "mushop_lb" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id     = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + display_name       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags      = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ip_address_details = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ip_addresses       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + ip_mode            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_private         = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + shape              = "10Mbps-Micro"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state              = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + subnet_ids         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + system_tags        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_bucket.mushop will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_bucket" "mushop" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type                  = "NoPublicAccess"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + approximate_count            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + approximate_size             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket_id                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id               = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + created_by                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + etag                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags                = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_read_only                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + kms_key_id                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object_events_enabled        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object_lifecycle_policy_etag = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + replication_enabled          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + storage_tier                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + versioning                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_bucket.mushop_media will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_bucket" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type                  = "ObjectReadWithoutList"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + approximate_count            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + approximate_size             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket_id                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + compartment_id               = "ocid1.compartment.oc1..aaaaaaaaoiggdp6snjdzdpncytzo73clzqktpzn2alciqrrsm7gbgf2lihla"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + created_by                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + defined_tags                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + etag                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + freeform_tags                = {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + "Reference" = "Created by OCI QuickStart for Free Tier"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + is_read_only                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + kms_key_id                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object_events_enabled        = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object_lifecycle_policy_etag = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + replication_enabled          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + storage_tier                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + versioning                   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.apache_conf will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "apache_conf" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content                    = "20fbce1062bc284460490d7e5672d8a3"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "apache_conf"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.catalogue_sql_script will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "catalogue_sql_script" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content                    = "60cbc0892a2108fb85df7a15a73d233d"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "catalogue_sql_script"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.entrypoint will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "entrypoint" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content                    = "67c1dd7541124e1e9ba62e2bd51e8cff"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "entrypoint"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_basic will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_basic" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "mushop_basic"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./scripts/mushop-basic.tar.gz 2020-06-04 19:54:30 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-001.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-001.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-001.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-001_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-001_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-001_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-002.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-002.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-002.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-002_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-002_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-002_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-003.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-003.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-003.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-003_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-003_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-003_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-004.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-004.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-004.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-004_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-004_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-004_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-005.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-005.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-005.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-005_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-005_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-005_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-006.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-006.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-006.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-006_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-006_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-006_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-007.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-007.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-007.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-007_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-007_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-007_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-008.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-008.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-008.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-008_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-008_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-008_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-009.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-009.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-009.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-009_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-009_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-009_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-010.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-010.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-010.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-010_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-010_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-010_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-011.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-011.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-011.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-011_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-011_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-011_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-012.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-012.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-012.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-012_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-012_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-012_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-013.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-013.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-013.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-013_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-013_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-013_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-014.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-014.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-014.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-014_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-014_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-014_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-015.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-015.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-015.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-015_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-015_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-015_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-016.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-016.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-016.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-016_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-016_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-016_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-017.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-017.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-017.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-017_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-017_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-017_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-018.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-018.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-018.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-018_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-018_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-018_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-019.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-019.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-019.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-019_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-019_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-019_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-020.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-020.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-020.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-020_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-020_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-020_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-021.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-021.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-021.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-021_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-021_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-021_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-022.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-022.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-022.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-022_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-022_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-022_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-023.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-023.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-023.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-023_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-023_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-023_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-024.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-024.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-024.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-024_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-024_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-024_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-025.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-025.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-025.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-025_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-025_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-025_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-026.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-026.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-026.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-026_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-026_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-026_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-027.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-027.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-027.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_media["MU-US-027_1.png"] will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_media" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + cache_control              = "max-age=604800, public, no-transform"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = "image/png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "MU-US-027_1.png"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + source                     = "./images/MU-US-027_1.png 2020-06-04 18:18:56 +0000 GMT"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object.mushop_wallet will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object" "mushop_wallet" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket                     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content                    = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_length             = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_md5                = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + content_type               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + delete_all_object_versions = false
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id                         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace                  = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object                     = "mushop_atp_wallet"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + state                      = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + version_id                 = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + work_request_id            = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_object_lifecycle_policy.mushop_deploy_assets_lifecycle_policy will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_object_lifecycle_policy" "mushop_deploy_assets_lifecycle_policy" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + rules {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + action      = "DELETE"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + is_enabled  = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + name        = "mushop-delete-deploy-assets-rule"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + time_amount = "1"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + time_unit   = "DAYS"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]           + object_name_filter {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + exclusion_patterns = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + inclusion_patterns = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]               + inclusion_prefixes = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]             }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]         }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.apache_conf_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "apache_conf_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "ObjectRead"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "apache_conf_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = "apache_conf"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.catalogue_sql_script_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "catalogue_sql_script_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "ObjectRead"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "catalogue_sql_script_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = "catalogue_sql_script"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.entrypoint_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "entrypoint_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "ObjectRead"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "entrypoint_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = "entrypoint"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.mushop_lite_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "mushop_lite_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "ObjectRead"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "mushop_lite_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = "mushop_basic"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.mushop_media_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "mushop_media_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "AnyObjectWrite"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "mushop_assets_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # oci_objectstorage_preauthrequest.mushop_wallet_preauth will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "oci_objectstorage_preauthrequest" "mushop_wallet_preauth" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_type  = "ObjectRead"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + access_uri   = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + bucket       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + name         = "mushop_wallet_preauth"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + namespace    = "frk4yv4iuqx5"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + object       = "mushop_atp_wallet"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + par_id       = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_created = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + time_expires = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # random_id.mushop_id will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "random_id" "mushop_id" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + b64         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + b64_std     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + b64_url     = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + byte_length = 2
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + dec         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + hex         = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id          = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   # random_string.autonomous_database_wallet_password will be created
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]   + resource "random_string" "autonomous_database_wallet_password" {
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + id               = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + length           = 16
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + lower            = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + min_lower        = 3
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + min_numeric      = 3
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + min_special      = 3
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + min_upper        = 3
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + number           = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + override_special = "{}#^*<>[]%~"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + result           = (known after apply)
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + special          = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]       + upper            = true
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     }
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] Plan: 84 to add, 0 to change, 0 to destroy.
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] ------------------------------------------------------------------------
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] This plan was saved to: <path hidden>
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] To perform exactly these actions, run the following command to apply:
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO]     terraform apply "<path hidden>"
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
+2020/07/05 23:13:21[TERRAFORM_CONSOLE] [INFO] 
